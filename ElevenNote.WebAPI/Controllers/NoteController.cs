@@ -73,8 +73,10 @@ namespace ElevenNote.WebAPI.Controllers
 
             if (!service.DeleteNote(id))
             {
-                return Ok();
+                return InternalServerError();
             }
+
+            return Ok();
         }
     }
 }
