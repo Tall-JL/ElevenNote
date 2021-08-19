@@ -66,5 +66,15 @@ namespace ElevenNote.WebAPI.Controllers
 
             }
         }
+
+        public IHttpActionResult Delete(int id)
+        {
+            var service = CreateNoteService();
+
+            if (!service.DeleteNote(id))
+            {
+                return Ok();
+            }
+        }
     }
 }
